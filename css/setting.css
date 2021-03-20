@@ -1,0 +1,23 @@
+* {
+	scroll-behavior: inherit;
+}
+body {
+	background: linear-gradient(#10ac84, #2ed573, #00d2d3);
+}
+.bioContent .bioBx table tr th {
+	line-height: 3.3rem;
+}
+.bioContent .bioBx table tr th a {
+	color: #fff;
+}
+.bioContent .bioBx table tr th a:hover {
+	color: #d44;
+	text-decoration: underline;
+}
+
+@media screen and (max-width: 991px) {
+	/* Games */
+	.game .bioContent .bioBx table :is(tr:nth-child(1), tr:nth-child(2), tr:nth-child(3), tr:nth-child(4), tr:nth-child(5), tr:nth-child(9), tr:nth-child(10), tr:nth-child(11), tr:nth-child(12)) {
+		display: none;
+	}
+}

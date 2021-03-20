@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Normal Guess | Games</title>
+
+	<style>
+		html {
+			font-size: 62.5%;
+		}
+		body {
+			background: url(../img/bg.png);
+		}
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+		.title {
+			font-size: 7rem;
+			font-weight: lighter;
+			color: #333;
+		}
+		.com {
+			font-size: 5rem;
+			margin-top: -2rem;
+			color: #333;
+		}
+		.input-user {
+			border: none;
+			outline: none;
+			text-align: center;
+			font-size: 2rem;
+			margin-top: -2rem;
+			margin-bottom: 2rem;
+			border-radius: 1rem;
+			border: .2rem solid #333;
+			box-shadow: 0 .5rem .7rem rgba(0,0,0,.3);
+			background: transparent;
+		}
+		.send, .reset, .back {
+			color: #222;
+			border: none;
+			outline: none;
+			font-size: 2rem;
+			margin-bottom: 2rem;
+			border-radius: 1rem;
+			border: .2rem solid #111;
+			box-shadow: 0 .5rem .7rem rgba(0,0,0,.3);
+			cursor: pointer;
+		}
+		:is(.send, .back):hover {
+			color: #2196f3;
+		}
+		:is(.reset):hover {
+			color: #f00;
+		}
+		.reset, .back {
+			display: block;
+			text-decoration: none;
+			background: #f1f2f6;
+			padding: 0 1rem;
+		}
+		.btn {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			width: 20rem;
+		}
+		.result {
+			font-size: 2.5rem;
+			font-weight: 700;
+		}
+		@media screen and (max-width: 991px) {
+			.title, .com {
+				font-size: 3rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- ! Container Start -->
+	<div class="container">
+		<h1 class="title">Guess the Numbers (1-20)</h1>
+
+		<h2 class="com">??</h2>
+		<input type="text" class="input-user">
+
+		<button type="submit" class="send">Submit (3)</button>
+		<div class="btn">
+			<a href="normal_angka.html" class="reset">Reset</a>
+			<a href="choose_tebak_angka.html" class="back">Back</a>
+		</div>
+		<div class="result"></div>
+	</div>
+	<!-- ! Container Finish -->
+
+	<!-- ! Custom Javascript -->
+	<script type="text/javascript">
+		const send = document.querySelector('.container .send');
+		const input = document.querySelector('.container .input-user');
+		const com = document.querySelector('.container .com');
+		const result = document.querySelector('.container .result');
+
+		var count = 2; // Change
+		var comPlay = Math.round(Math.random() * 19 + 1);
+
+		function score(player, comp) {
+			// If Win
+			if(player == comp) {
+				result.style.color = '#080';
+				result.innerHTML = 'Great, You Win! :)';
+				com.innerHTML = comp;
+				input.setAttribute('disabled', true);
+				return;
+			}
+			// If Lose
+			else {
+				// If Change
+				if(count > 0) {
+					count--;
+					send.innerHTML = 'Submit ('+ (count + 1) +')';
+
+					if(comp > player) {
+						result.style.color = '#333';
+						result.innerHTML = 'Computers have a greater value';
+						return;
+					}
+					else {
+						result.style.color = '#333';
+						result.innerHTML = 'Computers have less value';
+						return;
+					}
+				}
+				// If Change Over
+				else {
+					send.innerHTML = 'Submit';
+					result.style.color = '#f00';
+					result.innerHTML = 'Sorry, You Suck :v';
+					com.innerHTML = comp;
+					input.setAttribute('disabled', true);
+					return;
+				}
+			}
+		}
+
+		// Roll Button Click
+		send.addEventListener('click', function() {
+			score(input.value, comPlay);
+		});
+	</script>
+</body>
+</html>

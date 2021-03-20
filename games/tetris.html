@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tetris | Games</title>
+  <style>
+    body {
+      background: #202028;
+      color: #fff;
+      font-family: sans-serif;
+      font-size: 2em;
+      text-align: center;
+    }
+    canvas {
+      border: solid .2em #fff;
+      height: 85vh;
+    }
+    #note {
+      position: absolute;
+      top: 50px; left: 50px;
+      padding: 10px 30px;
+      background: #000;
+      color: #fff;
+      border: 5px solid #fff;
+    }
+    #note h1 {
+      font-size: 40px;
+      font-weight: lighter;
+    }
+    #note table tr th {
+      text-align: left;
+      font-weight: lighter;
+      font-size: 27px;
+    }
+  </style>
+</head>
+<body>
+  <div id="note">
+    <h1>How to Play</h1>
+    <table>
+      <tr>
+        <th>Move</th>
+        <th>: Arrow</th>
+      </tr>
+      <tr>
+        <th>Rotate</th>
+        <th>: W</th>
+      </tr>
+    </table>
+  </div>
+
+  <div id="score"></div>
+  <canvas id="tetris" width="240" height="400" />
+  <!-- ! Custom Javascript -->
+  <script src="../js/tetris.js"></script>
+</body>
+</html>

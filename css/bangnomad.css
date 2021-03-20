@@ -1,0 +1,129 @@
+* {
+	scroll-behavior: inherit;
+}
+body {
+	background: linear-gradient(#f1f2f6, #999, #111);
+}
+/* Memo */
+.memoBx {
+	margin: 3.5rem auto 0;
+}
+.memoBx .row {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.memoBx .row .imgBx {
+	position: relative;
+	flex: 1;
+	max-width: 300px;
+	height: 350px;
+	box-shadow: 0 1rem 2rem rgba(0,0,0,.3);
+	overflow: hidden;
+	cursor: pointer;
+}
+.memoBx .row .imgBx img {
+	position: relative;
+	opacity: .8;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	vertical-align: top;
+	transition: all .6s;
+}
+.memoBx .row .imgBx:hover img {
+	opacity: 1;
+	filter: brightness(1.1) contrast(1.1);
+}
+.memoBx .row .imgBx .details {
+	position: absolute;
+	top: 0; right: 0;
+	color: #fff;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+.memoBx .row .imgBx .details h2 {
+	text-align: center;
+	text-transform: uppercase;
+	text-shadow: 0 1rem 2rem rgba(0,0,0,.3);
+	font-size: 3rem;
+	font-weight: 300;
+	margin-top: 70px;
+	opacity: 0;
+	transition: all .4s;
+}
+.memoBx .row .imgBx .details h2 span {
+	font-weight: 900;
+}
+.memoBx .row .imgBx .details:hover h2 {
+	transform: translateY(-30px);
+	opacity: 1;
+}
+.memoBx .row .imgBx .more {
+	position: absolute;
+	bottom: -5rem;
+	background: rgba(255,255,255,1);
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px;
+	transition: bottom .6s;
+}
+.memoBx .row .imgBx:hover .more {
+	bottom: 0;
+}
+.memoBx .row .imgBx .more .see {
+	color: #111;
+	font-size: 1.5rem;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+.memoBx .row .imgBx .more .see span {
+	font-weight: 900;
+}
+.memoBx .row .imgBx .more .icon i {
+	color: #111;
+	font-size: 2rem;
+}
+.memoBx .row .imgBx .more .icon a:not(:last-child) i {
+	margin-right: 1.5rem;
+}
+.memoBx .row .imgBx .more :is(.see:hover, i:hover) {
+	color: #2196f3;
+}
+.memo .bottom {
+	font-size: 2rem;
+	text-align: center;
+	padding: 1rem;
+	color: #fff;
+}
+/* Processing */
+.bioContent .bioBx table tr th {
+	line-height: 3.3rem;
+}
+/* Audio */
+audio {
+	margin-top: 2rem;
+	border-radius: 30px;
+	border: 1px solid #333;
+}
+/* Last Job */
+.last .bioContent .bioBx {
+	margin: 1.2rem auto 0;
+}
+.bioContent .bioBx .tableBx tr th {
+	line-height: 1rem;
+}
+/* Footer */
+.footer .bioContent .bioBx .tableBx tr th {
+	line-height: 3rem;
+}
+
+@media screen and (max-width: 991px) {
+	.last .bioBx .tableBx tr .th {
+		line-height: 3rem;
+	}
+}

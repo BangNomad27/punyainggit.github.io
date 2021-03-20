@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Preloaders</title>
+
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: arial, sans-serif;
+		}
+		.preloader {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			background: #fff;
+			pointer-events: none;
+			animation: fadeOut .5s linear forwards;
+			animation-delay: 5.5s;
+		}
+		@keyframes fadeOut {
+			0% {
+				opacity: 1;
+			}
+			100% {
+				opacity: 0;
+			}			
+		}
+		.loader {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			background: linear-gradient(#d417f0, #ff6b6b, #d44);
+		}
+		.load {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 18vw;
+			color: #fff;
+			font-weight: 800;
+			mix-blend-mode: difference;
+			/*width: 550px;*/
+			/*text-align: center;*/
+		}
+		section {
+			position: relative;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			background-image: url(img/nurgit_load.png);
+			background-size: cover;
+		}
+		section .blank {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: rgba(17,17,17,.8);
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		section .blank a {
+			display: block;
+			padding: 10px 30px;
+			background: rgba(255,255,255,.5);
+			color: #fff;
+			text-decoration: none;
+			font-size: 1.5rem;
+			border-radius: 30px;
+			transition: .2s;
+		}
+		section .blank a:hover {
+			background: rgba(255,255,255,.2);
+			transform: scale(1.2););
+		}
+		@media screen and (max-width: 991px) {
+			.preloader {
+				animation-delay: 5.9s;
+			}
+			section {
+				background-image: url(img/nurgit_load_mobile.png);
+				/*background-position: -50px 0;*/
+			}
+			section .blank a {
+				padding: 10px 20px;
+				font-size: 1.1rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<div class="blank">
+			<a href="assets/main.html">Click Me</a>
+		</div>
+	</section>
+
+	<div class="preloader">
+		<div class="loader"></div>
+		<div class="load"></div>
+	</div>
+	
+	<!-- ! JQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+	<!-- ! Custom Javascript -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var load = 0;
+			var loads = setInterval(function() {
+				if(load <= 100) {
+					$('.load').text(load +'%');
+					$('.loader').css('width', load +'%');
+					load++;
+				}
+				else {
+					clearInterval(loads);
+				}
+			}, 50)
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Suwit Jawa | Games</title>
+
+	<style>
+		body {
+			background-image: url(../img/bg.png);
+			font-family: arial, sans-serif;
+		}
+		h1 {
+			font-size: 60px;
+			font-weight: 900;
+			text-align: center;
+			margin: 10px 0 0 0;
+			-webkit-text-stroke: 3px #333;
+			-webkit-text-fill-color: #e7e7e7;
+			transition: animation 2s linear;
+			animation: text .7s infinite alternate;
+		}
+		@keyframes text {
+			from {
+				text-shadow: 5px 5px 10px lightblue, -5px -5px 10px lightblue;
+				-webkit-text-fill-color: #2196f3;
+			}
+			to {
+				-webkit-text-fill-color: #d44;
+			}
+		}
+		.container {
+			width: 600px;
+			margin: auto;
+			padding: 20px;
+			position: relative;
+		}
+		.area-com, .area-player {
+			width: 560px;
+			height: 250px;
+			margin: 0 auto 5px;
+			position: relative;
+		}
+		.area-com {
+			background-image: linear-gradient(to bottom, #f25757 0%, red 100%);
+			padding-top: 40px;
+			box-sizing: border-box;
+			border-radius: 40px 40px 0 0;
+		}
+		.area-player {
+			background-image: linear-gradient(to bottom, lightskyblue 0%, blue 100%);
+			border-radius: 0 0 40px 40px;
+		}
+		.score-com, .score-player {
+			width: 120px;
+			height: 40px;
+			border: 5px solid #555;
+			background-color: #fff;
+			border-radius: 30px;
+			text-align: center;
+			line-height: 40px;
+			color: #222;
+			font-size: 22px;
+			text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+			z-index: 1;
+		}
+		.score-com {
+			position: absolute;
+			left: 20%;
+			top: 12%;
+			margin-left: -95px;
+			margin-top: -15px;
+		}
+		.score-player {
+			position: absolute;
+			right: 0%;
+			top: 15%;
+			margin-right: 10px;
+			margin-top: -30px;
+		}
+		.reset {
+			display: block;
+			position: absolute;
+			top: 70px; left: 20px;
+			width: 70px;
+			height: 40px;
+			background-color: #fff;
+			color: #222;
+			font-size: 18px;
+			border-radius: 30px;
+			border: 5px solid #555;
+			text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+			text-decoration: none;
+			text-align: center;
+			line-height: 40px;
+		}
+		.info {
+			width: 150px;
+			height: 60px;
+			border: 5px solid #555;
+			background-color: #fff;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -75px;
+			margin-top: -35px;
+			border-radius: 30px;
+			text-align: center;
+			line-height: 60px;
+			color: #222;
+			font-size: 26px;
+			text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+			z-index: 1;
+		}
+		.area-player ul {
+			margin: 0;
+			padding-top: 80px;
+			padding-left: 25px;
+		}
+		.area-player ul li {
+			display: inline-block;
+			margin: 0 18px;
+		}
+		img {
+			width: 130px;
+			height: 130px;
+			display: block;
+			margin: auto;
+			border-radius: 50%;
+		}
+		.gajah, .orang, .semut {
+			position: relative;
+			top: 0;
+			cursor: pointer;
+			transition: .3s;
+		}
+		.gajah:hover, .orang:hover, .semut:hover, .active {
+			box-shadow: 0 0 10px 5px lightblue;
+		}
+		.gajah:active, .orang:active, .semut:active {
+			top: 7px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Suwit Jawa v2.0</h1>
+
+	<!-- ! Container Start -->
+	<div class="container">
+		<div class="area-com">
+			<div class="score-com">Score : 0</div>
+			<a href="suwit_jawa.html" class="reset">Reset</a>
+			<img src="../img/gajah.png" alt="Random" class="img-com">
+		</div>
+		<div class="info"></div>
+		<div class="area-player">
+			<div class="score-player">Score : 0</div>
+			<ul>
+				<li><img src="../img/gajah.png" alt="Gajah" class="gajah"></li>
+				<li><img src="../img/orang.png" alt="Orang" class="orang"></li>
+				<li><img src="../img/semut.png" alt="Semut" class="semut"></li>
+			</ul>
+		</div>
+	</div>
+	<!-- ! Container Finish -->
+
+	<script src="../js/suwit_jawa.js"></script>
+</body>
+</html>

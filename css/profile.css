@@ -1,0 +1,197 @@
+* {
+	scroll-behavior: inherit;
+}
+body {
+	background: linear-gradient(#ff7f50, #fbc531, #ff8c00);
+}
+.container {
+	overflow: hidden;
+}
+/* Bio */
+.bioContent {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+.bioContent .bioBx {
+	margin: 3.5rem auto 0;
+}
+.bioContent .bioBx table {
+	color: #fff;
+	text-align: left;
+	border-radius: 1rem;
+	box-shadow: 0 1rem 2rem rgba(0,0,0,.3);
+}
+.bioContent .bioBx table tr th {
+	padding: 0 2rem;
+	font-size: 2rem;
+	line-height: 2.8rem;
+}
+/* To Do List */
+.list .listBx {
+	position: relative;
+	padding: 3rem 5rem 2rem 3rem;
+	background: rgba(255,255,255,.2);
+	margin: 3.5rem auto 0;
+	border-radius: 1rem;
+	box-shadow: 0 1rem 2rem rgba(0,0,0,.3);
+	/*border-top: 50px solid #03a9f4;*/
+}
+.list .listBx h2 {
+	color: #fff;
+	font-size: 3rem;
+	padding: 1.5rem 0;
+	margin-left: 1rem;
+	display: inline-block;
+	border-bottom: 4px solid #fff;
+}
+.list .listBx label {
+	position: relative;
+	display: block;
+	margin: 2.5rem 0;
+	color: #fff;
+	font-size: 2.5rem;
+	cursor: pointer;
+}
+.list .listBx label input[type="checkbox"] {
+	/*appearance: none;*/
+	position: absolute;
+	top: 2px;
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	outline: none; border: none;
+	border: 2px solid #fff;
+	cursor: pointer;
+}
+.list .listBx label span {
+	position: relative;
+	left: 40px;
+	transition: .5s;
+}
+.list .listBx label span::before {
+	content: '';
+	position: absolute;
+	top: 50%; left: 0;
+	width: 100%;
+	height: 1px;
+	background: #fff;
+	transform: translateY(-50%) scaleX(0);
+	transform-origin: right;
+	transition: transform .5s;
+}
+.list .listBx label input[type="checkbox"]:checked ~ span::before {
+	transform: translateY(-50%) scaleX(1);
+	transform-origin: left;
+	transition: transform .5s;
+}
+.list .listBx label input[type="checkbox"]:checked ~ span {
+	color: rgba(255,255,255,.5);
+}
+/* Album */
+.album {
+	position:relative;
+}
+.album .albumBx {
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.album .albumBx .circle {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	background-attachment: fixed;
+	cursor: pointer;
+	transition: 2s;
+}
+.album .albumBx .circle:hover {
+	z-index: 10;
+}
+.album .albumBx .circle.circle1 {
+	background: url(../img/nurgit4.png);
+	background-size: 300px 400px;
+	clip-path: circle(100px at 20% center);
+}
+.album .albumBx .circle.circle2 {
+	background: url(../img/nurgit3.png);
+	background-size: 300px 400px;
+	clip-path: circle(100px at center);
+}
+.album .albumBx .circle.circle3 {
+	background: url(../img/nurgit7.png);
+	background-size: 300px 400px;
+	clip-path: circle(100px at 80% center);
+}
+.album .albumBx .circle:active {
+	clip-path: circle(800px at center);
+}
+.album .bottom {
+	font-size: 2rem;
+	text-align: center;
+	padding: 1rem;
+	color: #fff;
+	position: absolute;
+	bottom: 2rem; left: 37%;
+}
+/* Bang Nomad */
+.bts .btsContent{
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 3.5rem auto 0;
+}
+.bts .btsContent .btsBx {
+	position: relative;
+	width: 400px;
+	height: 400px;
+	box-shadow: 0 1rem 2rem rgba(0,0,0,.3);
+}
+.bts .btsContent .btsBx img {
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: .5s ease;
+}
+.bts .btsContent .btsBx img:hover:nth-child(2) {
+	opacity: 0;
+}
+
+@media screen and (max-width: 991px) {
+	/* Bio */
+	.bioContent .bioBx {
+		width: 100%;
+		overflow-x: auto;
+	}
+	/* To Do List */
+	.list .listBx label span {
+		font-size: 2rem;
+	}
+	/* Album */
+	.album {
+		width: 100%;
+		height: 350px;
+	}
+	.album .albumBx .circle.circle1 {
+		clip-path: circle(50px at 20% center);
+	}
+	.album .albumBx .circle.circle2 {
+		clip-path: circle(50px at center);
+	}
+	.album .albumBx .circle.circle3 {
+		clip-path: circle(50px at 80% center);
+	}
+	.album .albumBx .circle:active {
+		clip-path: circle(800px at center);
+	}
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Choose Difficulty | Games</title>
+
+	<style>
+		html {
+			font-size: 62.5%;
+		}
+		body {
+			background: linear-gradient(#d417f0, #ff6b6b, #d44);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+			width: 100%;
+			height: 97.5vh;
+			background: rgba(255,255,255,.2);
+			border-radius: 1rem;
+		}
+		.container a {
+			display: block;
+			padding: 1rem 4rem;
+			font-size: 5rem;
+			text-decoration: none;
+			color: #fff;
+			letter-spacing: 1px;
+			background: rgba(255,255,255,.2);
+			border-radius: 1rem;
+			box-shadow: 0 1rem 2rem rgba(0,0,0,.3);
+			transition: .2s;
+		}
+		.container a:not(:last-child) {
+			margin-right: 5rem;
+		}
+		.container a:hover {
+			background: rgba(0,0,0,.3);
+			color: rgba(255,255,255,.5);
+			transform: scale(1.2);
+		}
+	</style>
+</head>
+<body>
+	<!-- ! Container Start -->
+	<div class="container">
+		<a href="easy_angka.html" class="easy">Easy</a>
+		<a href="normal_angka.html" class="normal">Normal</a>
+		<a href="hard_angka.html" class="hard">Hard</a>
+	</div>
+	<!-- ! Container Finish -->
+</body>
+</html>
